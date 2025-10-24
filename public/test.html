@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expensync Test</title>
+</head>
+<body>
+    <div style="padding: 20px; background: #f0f0f0; min-height: 100vh;">
+        <h1 style="color: red; font-size: 32px;">🎉 STATIC HTML IS WORKING!</h1>
+        <p>This is a static HTML file to test if Vercel deployment is working.</p>
+        <p>Current time: <span id="time"></span></p>
+        <p>URL: <span id="url"></span></p>
+        
+        <div style="margin-top: 20px; padding: 15px; background: white; border: 1px solid #ccc;">
+            <h3>If you can see this:</h3>
+            <ul>
+                <li>✅ Vercel deployment is working</li>
+                <li>✅ Static files are being served</li>
+                <li>❌ JavaScript/React build is failing</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript test
+        document.getElementById('time').textContent = new Date().toISOString();
+        document.getElementById('url').textContent = window.location.href;
+        console.log('Static HTML JavaScript is working!');
+    </script>
+</body>
+</html>
