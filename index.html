@@ -37,6 +37,14 @@
             <p><strong>URL:</strong> <span id="url"></span></p>
             <p><strong>Time:</strong> <span id="time"></span></p>
         </div>
+        
+        <div class="status" style="background: #e8f5e8; margin: 20px 0;">
+            <h3>🔗 Backend Connection</h3>
+            <p><strong>Backend URL:</strong> <span id="backend-url">https://expncesync-backend.vercel.app</span></p>
+            <p><strong>Connection Status:</strong> <span id="connection-status">Testing...</span></p>
+            <p><strong>API Response:</strong> <span id="api-response">Loading...</span></p>
+        </div>
+        
         <p>This is a simple HTML page to test deployment.</p>
         <p>If you can see this, the frontend is working!</p>
     </div>
@@ -45,6 +53,42 @@
         document.getElementById('url').textContent = window.location.href;
         document.getElementById('time').textContent = new Date().toLocaleString();
         console.log('Expensync is working!');
+        
+        // Test backend connection
+        async function testBackendConnection() {
+            const backendUrl = 'https://expncesync-backend.vercel.app';
+            const statusElement = document.getElementById('connection-status');
+            const responseElement = document.getElementById('api-response');
+            
+            try {
+                console.log('Testing backend connection to:', backendUrl);
+                const response = await fetch(backendUrl);
+                
+                if (response.ok) {
+                    const data = await response.text();
+                    statusElement.textContent = '✅ Connected Successfully!';
+                    statusElement.style.color = '#28a745';
+                    responseElement.textContent = data;
+                    responseElement.style.color = '#28a745';
+                    console.log('Backend connection successful:', data);
+                } else {
+                    statusElement.textContent = '❌ Connection Failed';
+                    statusElement.style.color = '#dc3545';
+                    responseElement.textContent = `Error: ${response.status} ${response.statusText}`;
+                    responseElement.style.color = '#dc3545';
+                    console.error('Backend connection failed:', response.status);
+                }
+            } catch (error) {
+                statusElement.textContent = '❌ Connection Error';
+                statusElement.style.color = '#dc3545';
+                responseElement.textContent = `Error: ${error.message}`;
+                responseElement.style.color = '#dc3545';
+                console.error('Backend connection error:', error);
+            }
+        }
+        
+        // Test the connection
+        testBackendConnection();
     </script>
 </body>
 </html>
