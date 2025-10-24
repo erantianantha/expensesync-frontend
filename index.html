@@ -2,42 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/public/animations/logo4.png" sizes="180x180" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expensync Test</title>
+    <title>Expensync | Sync-Your-Expense</title>
   </head>
   <body>
-    <div style="padding: 20px; background: #f0f0f0; min-height: 100vh;">
-      <h1 style="color: red; font-size: 32px;">🚀 EXPENSYNC IS WORKING!</h1>
-      <p>This is a simple HTML page without React to test deployment.</p>
-      <p>Current time: <span id="time"></span></p>
-      <p>URL: <span id="url"></span></p>
-      
-      <div style="margin-top: 20px; padding: 15px; background: white; border: 1px solid #ccc;">
-        <h3>Deployment Status:</h3>
-        <ul>
-          <li>✅ HTML is loading</li>
-          <li>✅ CSS is working</li>
-          <li>✅ JavaScript is working</li>
-          <li>✅ Vercel deployment is successful</li>
-        </ul>
-      </div>
-      
-      <div style="margin-top: 20px; padding: 15px; background: #e8f4fd; border: 1px solid #2196F3;">
-        <h3>Next Steps:</h3>
-        <ol>
-          <li>✅ Basic deployment is working</li>
-          <li>🔄 Now we can fix the React build issue</li>
-          <li>🔗 Deploy the backend</li>
-          <li>🧪 Test the complete application</li>
-        </ol>
-      </div>
-    </div>
-
-    <script>
-      // Simple JavaScript to test functionality
-      document.getElementById('time').textContent = new Date().toISOString();
-      document.getElementById('url').textContent = window.location.href;
-      console.log('Simple HTML JavaScript is working!');
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
