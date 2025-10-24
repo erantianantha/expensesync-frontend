@@ -3,6 +3,14 @@ import React from 'react';
 // Simple test component first
 function App() {
   console.log('🚀 Expensync React App Starting...');
+  console.log('Environment:', import.meta.env.MODE);
+  console.log('API URL:', import.meta.env.VITE_API_URL);
+  
+  // Add a test to make sure React is rendering
+  React.useEffect(() => {
+    console.log('React useEffect triggered - component mounted!');
+    document.title = 'Expensync - React App Working!';
+  }, []);
   
   return (
     <div style={{
