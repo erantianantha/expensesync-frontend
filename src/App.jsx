@@ -1,58 +1,47 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./context/ThemeContext"; 
-import { LoaderProvider } from "./context/LoaderContext"; 
-import Loader from "./components/Loader"; 
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ToastContainer } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css"; 
+import React from 'react';
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import AddTransaction from "./components/AddTransaction";
-import Transactions from "./components/Transactions";
-import Budget from "./components/Budget";
-import Charts from "./components/Charts";
-import Landing from "./pages/Landing";
-
+// Minimal working React component
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider>
-        <LoaderProvider>
-          {/* ✅ Global Loader */}
-          <Loader />
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: '#f0f0f0', 
+      minHeight: '100vh',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <h1 style={{ color: 'red', fontSize: '32px', marginBottom: '20px' }}>
+        🎉 REACT IS WORKING!
+      </h1>
+      
+      <div style={{ 
+        backgroundColor: 'white', 
+        padding: '20px', 
+        borderRadius: '8px',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        marginBottom: '20px'
+      }}>
+        <h2 style={{ color: '#333', marginBottom: '15px' }}>✅ React Status: WORKING</h2>
+        <p style={{ marginBottom: '10px' }}><strong>Current URL:</strong> {window.location.href}</p>
+        <p style={{ marginBottom: '10px' }}><strong>Timestamp:</strong> {new Date().toISOString()}</p>
+        <p style={{ marginBottom: '10px' }}><strong>Environment:</strong> {import.meta.env.MODE}</p>
+        <p style={{ marginBottom: '10px' }}><strong>API URL:</strong> {import.meta.env.VITE_API_URL || 'Not set'}</p>
+      </div>
 
-          <Router>
-            {/* ✅ Toast container */}
-            <ToastContainer
-              position="top-right"
-              autoClose={3000}
-              hideProgressBar={false}
-              newestOnTop
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="colored"
-            />
-
-            {/* ✅ Routes */}
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/transactions" element={<Transactions />} />
-              <Route path="/budget" element={<Budget />} />
-              <Route path="/charts" element={<Charts />} />
-              <Route path="/add" element={<AddTransaction />} />
-            </Routes>
-          </Router>
-        </LoaderProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+      <div style={{ 
+        backgroundColor: '#d1ecf1', 
+        padding: '15px', 
+        borderRadius: '8px',
+        border: '1px solid #bee5eb'
+      }}>
+        <h3 style={{ color: '#0c5460', marginBottom: '10px' }}>📋 Next Steps:</h3>
+        <ol style={{ color: '#0c5460', paddingLeft: '20px' }}>
+          <li>✅ React is working</li>
+          <li>🔄 Deploy backend to Vercel</li>
+          <li>🔗 Set VITE_API_URL environment variable</li>
+          <li>🧪 Test the complete application</li>
+        </ol>
+      </div>
+    </div>
   );
 }
 
