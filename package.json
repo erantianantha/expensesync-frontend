@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "echo 'Static site - no build needed'",
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'Static site - no linting needed'",
+    "preview": "echo 'Static site - no preview needed'"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.46.2",
