@@ -1,94 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Expensync</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .status {
-            background: #e8f5e8;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🚀 Expensync is Working! (Updated)</h1>
-        <div class="status">
-            <p><strong>Status:</strong> Frontend deployed successfully</p>
-            <p><strong>URL:</strong> <span id="url"></span></p>
-            <p><strong>Time:</strong> <span id="time"></span></p>
-        </div>
-        
-        <div class="status" style="background: #e8f5e8; margin: 20px 0;">
-            <h3>🔗 Backend Connection</h3>
-            <p><strong>Backend URL:</strong> <span id="backend-url">https://expncesync-backend.vercel.app</span></p>
-            <p><strong>Connection Status:</strong> <span id="connection-status">Testing...</span></p>
-            <p><strong>API Response:</strong> <span id="api-response">Loading...</span></p>
-        </div>
-        
-        <p>This is a simple HTML page to test deployment.</p>
-        <p>If you can see this, the frontend is working!</p>
-    </div>
-
-    <script>
-        document.getElementById('url').textContent = window.location.href;
-        document.getElementById('time').textContent = new Date().toLocaleString();
-        console.log('Expensync is working!');
-        
-        // Test backend connection
-        async function testBackendConnection() {
-            const backendUrl = 'https://expncesync-backend.vercel.app';
-            const statusElement = document.getElementById('connection-status');
-            const responseElement = document.getElementById('api-response');
-            
-            try {
-                console.log('Testing backend connection to:', backendUrl);
-                const response = await fetch(backendUrl);
-                
-                if (response.ok) {
-                    const data = await response.text();
-                    statusElement.textContent = '✅ Connected Successfully!';
-                    statusElement.style.color = '#28a745';
-                    responseElement.textContent = data;
-                    responseElement.style.color = '#28a745';
-                    console.log('Backend connection successful:', data);
-                } else {
-                    statusElement.textContent = '❌ Connection Failed';
-                    statusElement.style.color = '#dc3545';
-                    responseElement.textContent = `Error: ${response.status} ${response.statusText}`;
-                    responseElement.style.color = '#dc3545';
-                    console.error('Backend connection failed:', response.status);
-                }
-            } catch (error) {
-                statusElement.textContent = '❌ Connection Error';
-                statusElement.style.color = '#dc3545';
-                responseElement.textContent = `Error: ${error.message}`;
-                responseElement.style.color = '#dc3545';
-                console.error('Backend connection error:', error);
-            }
-        }
-        
-        // Test the connection
-        testBackendConnection();
-    </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/public/animations/logo4.png" sizes="180x180" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expensync | Sync-Your-Expense</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

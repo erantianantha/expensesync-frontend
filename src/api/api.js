@@ -6,7 +6,7 @@ import {
 } from "../utils/toast";
 import { loaderControl } from "../utils/loaderControl"; // 👈 loader utility
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://expncesync-backend.vercel.app/api/v1";
 
 // Axios instance
 const API = axios.create({
