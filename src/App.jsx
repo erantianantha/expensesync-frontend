@@ -16,6 +16,7 @@ import Layout from './components/Layout';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
+  console.log('🚀 Expensync React App Starting...');
   return (
     <ErrorBoundary>
       <ThemeProvider>
